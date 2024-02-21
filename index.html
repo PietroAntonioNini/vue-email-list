@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Email List</title>
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
@@ -11,9 +13,13 @@
     
     <div id="app">
         <h1>Generatore di Email Casuali</h1>
-        <ul>
+
+        <p v-show="emails.length < 10">Caricamento email in corso...</p>
+
+        <ul v-show="emails.length === 10">
             <li v-for="email in emails">{{ email }}</li>
         </ul>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
